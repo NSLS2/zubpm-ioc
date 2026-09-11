@@ -350,9 +350,9 @@ record(ai, "$(P){BPM:$(NO)}Pos:Kx-I") {
     field(DTYP, "PSC Reg")
     field(INP , "@psc$(NO) 30 24")
     field(SCAN,"I/O Intr")
-#    field(ASLO, "0.000001")
-    field(PREC, "0")
-    field(EGU,  "nm")
+    field(ASLO, "0.000001")
+    field(PREC, "3")
+    field(EGU,  "mm")
 }
 
 record(ai, "$(P){BPM:$(NO)}Pos:Ky-I") {
@@ -360,9 +360,9 @@ record(ai, "$(P){BPM:$(NO)}Pos:Ky-I") {
     field(DTYP, "PSC Reg")
     field(INP , "@psc$(NO) 30 28")
     field(SCAN,"I/O Intr")
-#    field(ASLO, "0.000001")
-    field(PREC, "0")
-    field(EGU,  "nm")
+    field(ASLO, "0.000001")
+    field(PREC, "3")
+    field(EGU,  "mm")
 }
 
 record(ai, "$(P){BPM:$(NO)}Pos:BbaXOff-I") {
@@ -595,3 +595,79 @@ record(ai, "$(P){BPM:$(NO)}Pwr:afe-iin-I") {
 
 
 
+record(ao, "$(P){BPM:$(NO)}Pos:UsrXoffset-SP") {
+	field(DESC, "User X position Offset")
+    field(DTYP, "Soft Channel")
+    field(HOPR, "15.0")
+    field(LOPR, "-15.0")
+    field(DRVH,"15.0") 
+    field(DRVL,"-15.0")
+    field(PREC, "3")    
+	field(EGU, "mm")
+#    field(OUT,  "$(P){BPM:$(NO)}Pos:Href-I PP")
+#    field(OMSL, "closed_loop")
+}
+
+record(ao, "$(P){BPM:$(NO)}Pos:UsrYoffset-SP") {
+	field(DESC, "User Y position Offset")
+    field(DTYP, "Soft Channel")
+    field(HOPR, "15.0")
+    field(LOPR, "-15.0")
+    field(DRVH,"15.0") 
+    field(DRVL,"-15.0")
+    field(PREC, "3")    
+	field(EGU, "mm")
+#    field(OUT,  "$(P){BPM:$(NO)}Pos:Href-I PP")
+#    field(OMSL, "closed_loop")
+}
+
+record(ao, "$(P){BPM:$(NO)}Beam:Gain-SP") {
+	field(DESC, "Beam current Gain")
+	field(DTYP,"Soft Channel")
+	field(PINI, "YES")
+	field(VAL, "100.0")
+	field(PREC,"3")
+	field(EGU, "mA")
+	field(LINR,"LINEAR")
+}
+record(ao, "$(P){BPM:$(NO)}Beam:Off-SP") {
+	field(DESC, "Beam Current Offset")
+	field(DTYP,"Soft Channel")
+	field(PINI, "YES")
+	field(VAL, "0.001")
+	field(PREC,"3")
+	field(EGU, "mA")
+	field(LINR,"LINEAR")
+}
+
+record(calc, "$(P){BPM:$(NO)}Ampl:SSA-Calc") {
+    field(DESC, "Button Sum calculation")
+    field(CALC, "A+B+C+D")
+    field(INPA, "$(P){BPM:$(NO)}Ampl:ASA-I.VAL NPP MS")
+    field(INPB, "$(P){BPM:$(NO)}Ampl:BSA-I.VAL NPP MS")
+    field(INPC, "$(P){BPM:$(NO)}Ampl:CSA-I.VAL NPP MS")
+    field(INPD, "$(P){BPM:$(NO)}Ampl:DSA-I.VAL NPP MS")
+    field(PREC, "5")
+    field(HIHI,"3.0")
+    field(LOLO,"-10.0")
+    field(HIGH,"2.5")
+    field(HSV, "MINOR")	
+    field(LSV, "MINOR")	
+    field(HHSV, "MAJOR")	
+    field(LLSV, "MAJOR")	
+    field(HYST,"0.00001")
+#    field(FLNK, "$(P){BPM:$(NO)}Pos:QSA-Calc")
+    field(ADEL , "-1")
+    field(MDEL , "-1")
+}
+
+record(calc, "$(P){BPM:$(NO)}I-I") {
+	field(DESC, "Beam Current calculation")
+	field(CALC, "(A*B)-C")
+#	field(INPA, "$(P){BPM:$(NO)}Ampl:Sum-I.VAL  NPP MS")
+	field(INPA, "$(P){BPM:$(NO)}Ampl:SSA-Calc.VAL  NPP MS")	
+	field(INPB, "$(P){BPM:$(NO)}Beam:Gain-SP.VAL NPP MS")
+	field(INPC, "$(P){BPM:$(NO)}Beam:Off-SP.VAL NPP MS")
+	field(PREC,"6")
+	field(EGU,  "mA")	
+}
