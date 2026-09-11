@@ -1,13 +1,13 @@
 #############################
 ### ADC DMA Waveform 1M samples
 #############################
-record(stringin, "$(P){BPM:$(NO)}Ampl:ARaw-I:T") {
+record(stringin, "$(P){BPM:$(NO)}ADC:A:Buff-Wfm:T") {
   field(DTYP, "Soft Timestamp")
-  field(TSEL, "$(P){BPM:$(NO)}Ampl:ARaw-I.TIME CP")
+  field(TSEL, "$(P){BPM:$(NO)}ADC:A:Buff-Wfm.TIME CP")
   field(INP, "@%Y%H%M%S")
 }
 
-record(waveform,"$(P){BPM:$(NO)}Ampl:ARaw-I") {
+record(waveform,"$(P){BPM:$(NO)}ADC:A:Buff-Wfm") {
     field(DESC, "117 MHz ADC0 raw waveform")
     field(DTYP, "PSC Block I16 In")
     field(INP , "@psc$(NO) 53 0 8")
@@ -20,7 +20,7 @@ record(waveform,"$(P){BPM:$(NO)}Ampl:ARaw-I") {
     info("TimeFromBlock", "0")
 }
 
-record(waveform,"$(P){BPM:$(NO)}Ampl:BRaw-I") {
+record(waveform,"$(P){BPM:$(NO)}ADC:B:Buff-Wfm") {
     field(DESC, "117 MHz ADC1 raw waveform")
     field(DTYP, "PSC Block I16 In")
     field(INP , "@psc$(NO) 53 2 8")
@@ -33,7 +33,7 @@ record(waveform,"$(P){BPM:$(NO)}Ampl:BRaw-I") {
     info("TimeFromBlock", "0")
 }
 
-record(waveform,"$(P){BPM:$(NO)}Ampl:CRaw-I") {
+record(waveform,"$(P){BPM:$(NO)}ADC:C:Buff-Wfm") {
     field(DESC, "117 MHz ADC2 raw waveform")
     field(DTYP, "PSC Block I16 In")
     field(INP , "@psc$(NO) 53 4 8")
@@ -47,7 +47,7 @@ record(waveform,"$(P){BPM:$(NO)}Ampl:CRaw-I") {
 
 }
 
-record(waveform,"$(P){BPM:$(NO)}Ampl:DRaw-I") {
+record(waveform,"$(P){BPM:$(NO)}ADC:D:Buff-Wfm") {
     field(DESC, "117 MHz ADC3 raw waveform")
     field(DTYP, "PSC Block I16 In")
     field(INP , "@psc$(NO) 53 6 8")
@@ -263,16 +263,16 @@ record(aSub,"$(P){BPM:$(NO)}ADC-Sub"){
 
     field(FTA,  "DOUBLE")
     field(NOA,  "10000")
-    field(INPA, "$(P){BPM:$(NO)}Ampl:ARaw-I")
+    field(INPA, "$(P){BPM:$(NO)}ADC:A:Buff-Wfm")
     field(FTB,  "DOUBLE")
     field(NOB,  "10000")
-    field(INPB, "$(P){BPM:$(NO)}Ampl:BRaw-I")
+    field(INPB, "$(P){BPM:$(NO)}ADC:B:Buff-Wfm")
     field(FTC,  "DOUBLE")
     field(NOC,  "10000")
-    field(INPC, "$(P){BPM:$(NO)}Ampl:CRaw-I")
+    field(INPC, "$(P){BPM:$(NO)}ADC:C:Buff-Wfm")
     field(FTD,  "DOUBLE")
     field(NOD,  "10000")
-    field(INPD, "$(P){BPM:$(NO)}Ampl:DRaw-I")
+    field(INPD, "$(P){BPM:$(NO)}ADC:D:Buff-Wfm")
     field(FTE,  "LONG")
     field(NOE,  "1")
     field(INPE, "$(P){BPM:$(NO)}ADC:WfmLen-SP")
