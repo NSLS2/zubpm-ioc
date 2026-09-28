@@ -590,7 +590,7 @@ record(ai, "$(P){BPM:$(NO)}Pwr:afe-iin-I") {
     field(HHSV,"MAJOR")
     field(HSV,"MINOR")
     field(LLSV,"INVALID")
-    field(LSV,"MINOR")
+    field(LSV,"MINOR")    
 }
 
 
@@ -657,6 +657,7 @@ record(calc, "$(P){BPM:$(NO)}Ampl:SSA-Calc") {
     field(LLSV, "MAJOR")	
     field(HYST,"0.00001")
 #    field(FLNK, "$(P){BPM:$(NO)}Pos:QSA-Calc")
+    field(FLNK,  "$(P){BPM:$(NO)}I-I")
     field(ADEL , "-1")
     field(MDEL , "-1")
 }
