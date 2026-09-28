@@ -289,7 +289,7 @@ record(longout, "$(P){BPM:$(NO)}Trig:TrigtoBeamThresh-SP") {
     field(OUT , "@psc$(NO) 1 276")
     field(LOPR, "1")
     field(PINI, "YES")
-    field(VAL, "0")
+    field(VAL, "1000")
     info(autosaveFields, "VAL")
     field(FLNK, "$(P){BPM:$(NO)}GoRegSingleWrite")
 }
@@ -302,7 +302,7 @@ record(longout, "$(P){BPM:$(NO)}EVR:EventNo-SP") {
     field(HOPR,"254")
     field(LOPR,"1")
     field(PINI, "YES")
-    field(VAL, "10")
+    field(VAL, "55")
     field(EGU, "")
     info(autosaveFields, "VAL")
     field(FLNK, "$(P){BPM:$(NO)}GoRegSingleWrite")
