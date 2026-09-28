@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-10-27 14:41:12 by caracapp-->
+<!--Saved on 2026-09-08 15:34:10 by mead-->
 <display version="2.0.0">
   <name>zuSystem</name>
   <width>1200</width>
@@ -558,7 +558,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_71</name>
-    <pv_name>$(P){BPM:$(NO)}Sys:Uptime-I</pv_name>
+    <pv_name>$(P){BPM:$(NO)}Rtos-Uptime-I</pv_name>
     <x>460</x>
     <y>544</y>
     <font>
@@ -4350,9 +4350,9 @@
         <name>Action Button_40</name>
         <actions>
           <action type="open_display">
-            <description>Open Display</description>
             <file>zuADC.bob</file>
             <target>replace</target>
+            <description>Open Display</description>
           </action>
         </actions>
         <text>ADC</text>
@@ -4399,9 +4399,9 @@
         <name>Action Button_41</name>
         <actions>
           <action type="open_display">
-            <description>Open Display</description>
             <file>zuFFT.bob</file>
             <target>replace</target>
+            <description>Open Display</description>
           </action>
         </actions>
         <text>FFT</text>
@@ -4448,9 +4448,9 @@
         <name>Action Button_42</name>
         <actions>
           <action type="open_display">
-            <description>Open Display</description>
             <file>zuTbT.bob</file>
             <target>replace</target>
+            <description>Open Display</description>
           </action>
         </actions>
         <text>TBT</text>
@@ -4497,9 +4497,9 @@
         <name>Action Button_43</name>
         <actions>
           <action type="open_display">
-            <description>Open Display</description>
             <file>zuFA.bob</file>
             <target>replace</target>
+            <description>Open Display</description>
           </action>
         </actions>
         <text>FA</text>
@@ -4589,9 +4589,9 @@
         <name>Action Button_46</name>
         <actions>
           <action type="open_display">
-            <description>Open Display</description>
             <file>zuSA.bob</file>
             <target>replace</target>
+            <description>Open Display</description>
           </action>
         </actions>
         <text>SA</text>
@@ -4638,9 +4638,9 @@
         <name>Action Button_44</name>
         <actions>
           <action type="open_display">
-            <description>Open Display</description>
             <file>zuLive.bob</file>
             <target>replace</target>
+            <description>Open Display</description>
           </action>
         </actions>
         <text>Live</text>
@@ -5351,9 +5351,9 @@
       <name>Action Button_47</name>
       <actions>
         <action type="open_display">
-          <description>Open Display</description>
           <file>zuTemp.bob</file>
           <target>replace</target>
+          <description>Open Display</description>
         </action>
       </actions>
       <text>Temp</text>
@@ -5928,19 +5928,19 @@
           <name>Action Button_19</name>
           <actions execute_as_one="true">
             <action type="write_pv">
-              <description>WritePV</description>
               <pv_name>$(P){BPM:$(NO)}SA:Reset-SP</pv_name>
               <value>1</value>
+              <description>WritePV</description>
             </action>
             <action type="write_pv">
-              <description>WritePV</description>
               <pv_name>$(P){BPM:$(NO)}SA:Length-I</pv_name>
               <value>300</value>
+              <description>WritePV</description>
             </action>
             <action type="write_pv">
-              <description>WritePV</description>
               <pv_name>$(P){BPM:$(NO)}SA:Decimate-I</pv_name>
               <value>1</value>
+              <description>WritePV</description>
             </action>
           </actions>
           <text>RESET</text>
@@ -6591,9 +6591,9 @@
     <name>Action Button_22</name>
     <actions execute_as_one="true">
       <action type="write_pv">
-        <description>WritePV</description>
         <pv_name>$(P){BPM:$(NO)}RFSW:Enable-SP</pv_name>
         <value>1</value>
+        <description>WritePV</description>
       </action>
     </actions>
     <text>X</text>
@@ -6626,9 +6626,9 @@
     <name>Action Button_23</name>
     <actions execute_as_one="true">
       <action type="write_pv">
-        <description>WritePV</description>
         <pv_name>$(P){BPM:$(NO)}RFSW:Enable-SP</pv_name>
         <value>0</value>
+        <description>WritePV</description>
       </action>
     </actions>
     <text>S</text>
@@ -6750,9 +6750,9 @@
     <name>Action Button_24</name>
     <actions execute_as_one="true">
       <action type="write_pv">
-        <description>WritePV</description>
         <pv_name>$(P){BPM:$(NO)}RFSW:Enable-SP</pv_name>
         <value>2</value>
+        <description>WritePV</description>
       </action>
     </actions>
     <text>RF</text>
