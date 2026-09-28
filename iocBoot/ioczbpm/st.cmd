@@ -23,7 +23,7 @@ zbpm_registerRecordDeviceDriver(pdbbase)
 
 # BPM IP address
 #epicsEnvSet("ZBPM_IP", "10.0.143.153");  #4030
-epicsEnvSet("ZBPM_IP", "10.0.142.104");  #4030
+epicsEnvSet("ZBPM_IP", "10.0.142.124");  #4030
 
 
 ## Load record instances
