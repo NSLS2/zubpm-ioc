@@ -184,84 +184,84 @@ record(waveform, "$(P){BPM:$(NO)}SA:TrigDate-I"){
 ##########################################################
 
 
-record(ao, "$(P){BPM:$(NO)}Pos:UsrXoffset-SP") {
-    field(DESC, "User X position Offset")
-    field(DTYP, "Soft Channel")
-    field(HOPR, "5000.0")
-    field(LOPR, "-5000.0")
-    field(DRVH,"5000.0")
-    field(DRVL,"-5000.0")
-    field(PREC, "3")
-    field(EGU, "um")
-     field(VAL, "0")
-#    field(OUT,  "$(P)Pos:Href-I PP")
-#    field(OMSL, "closed_loop")
-}
-
-#record(ai, "$(P){BPM:$(NO)}Pos:UsrYoffset-I") {
+#record(ao, "$(P){BPM:$(NO)}Pos:UsrXoffset-SP") {
+#    field(DESC, "User X position Offset")
 #    field(DTYP, "Soft Channel")
-#    field(EGU,  "um")
-#    field(HOPR, "10.0")
-#    field(LOPR, "-10.0")
+#    field(HOPR, "5000.0")
+#    field(LOPR, "-5000.0")
+#    field(DRVH,"5000.0")
+#    field(DRVL,"-5000.0")
 #    field(PREC, "3")
+#    field(EGU, "um")
+#     field(VAL, "0")
+##    field(OUT,  "$(P)Pos:Href-I PP")
+##    field(OMSL, "closed_loop")
 #}
 
-record(ao, "$(P){BPM:$(NO)}Pos:UsrYoffset-SP") {
-    field(DESC, "User Y position Offset")
-    field(DTYP, "Soft Channel")
-    field(HOPR, "5000.0")
-    field(LOPR, "-5000.0")
-    field(DRVH,"5000.0")
-    field(DRVL,"-5000.0")
-    field(VAL, "0")
-    field(PREC, "3")
- #   field(OUT,  "$(P)Pos:Href-I PP")
- #   field(OMSL, "closed_loop")
-}
+##record(ai, "$(P){BPM:$(NO)}Pos:UsrYoffset-I") {
+##    field(DTYP, "Soft Channel")
+##    field(EGU,  "um")
+##    field(HOPR, "10.0")
+##    field(LOPR, "-10.0")
+##    field(PREC, "3")
+##}
 
-#record(ai, "$(P){BPM:$(NO)}Pos:UsrYoffset-I") {
+#record(ao, "$(P){BPM:$(NO)}Pos:UsrYoffset-SP") {
+#    field(DESC, "User Y position Offset")
 #    field(DTYP, "Soft Channel")
-#    field(EGU,  "um")
-#    field(HOPR, "10.0")
-#    field(LOPR, "-10.0")
+#    field(HOPR, "5000.0")
+#    field(LOPR, "-5000.0")
+#    field(DRVH,"5000.0")
+#    field(DRVL,"-5000.0")
+#    field(VAL, "0")
 #    field(PREC, "3")
+# #   field(OUT,  "$(P)Pos:Href-I PP")
+# #   field(OMSL, "closed_loop")
+#}
+
+##record(ai, "$(P){BPM:$(NO)}Pos:UsrYoffset-I") {
+##    field(DTYP, "Soft Channel")
+##    field(EGU,  "um")
+##    field(HOPR, "10.0")
+##    field(LOPR, "-10.0")
+##    field(PREC, "3")
+##}
+
+
+
+
+
+#record(ao, "$(P){BPM:$(NO)}Beam:Off-SP") {
+#        field(DESC, "Beam Current Offset")
+#        field(DTYP,"Soft Channel")
+#        field(PINI, "YES")
+#        field(VAL, "0.001")
+#        field(PREC,"3")
+##        field(EGU, "mA")
+#        field(LINR,"LINEAR")
+#}
+
+#record(ao, "$(P){BPM:$(NO)}Beam:Gain-SP") {
+#        field(DESC, "Beam current Gain")
+#        field(DTYP,"Soft Channel")
+#        field(PINI, "YES")
+#        field(VAL, "0.00002")
+#        field(PREC,"3")
+##        field(EGU, "mA")
+#        field(LINR,"LINEAR")
 #}
 
 
-
-
-
-record(ao, "$(P){BPM:$(NO)}Beam:Off-SP") {
-        field(DESC, "Beam Current Offset")
-        field(DTYP,"Soft Channel")
-        field(PINI, "YES")
-        field(VAL, "0.001")
-        field(PREC,"3")
-#        field(EGU, "mA")
-        field(LINR,"LINEAR")
-}
-
-record(ao, "$(P){BPM:$(NO)}Beam:Gain-SP") {
-        field(DESC, "Beam current Gain")
-        field(DTYP,"Soft Channel")
-        field(PINI, "YES")
-        field(VAL, "0.00002")
-        field(PREC,"3")
-#        field(EGU, "mA")
-        field(LINR,"LINEAR")
-}
-
-
-record(calc, "$(P){BPM:$(NO)}I-I") {
-    field(DESC, "Beam Current calculation")
-    field(CALC, "(A*B)-C")
-   field(INPA, "$(P){BPM:$(NO)}Ampl:Sum-I.VAL  CP MS")
-#    field(INPA, "$(P){BPM:$(NO)}Ampl:SSA-Calc.VAL  NPP MS")
-    field(INPB, "$(P){BPM:$(NO)}Beam:Gain-SP.VAL NPP MS")
-    field(INPC, "$(P){BPM:$(NO)}Beam:Off-SP.VAL NPP MS")
-    field(PREC,"6")
-    field(EGU,  "nC")
-}
+#record(calc, "$(P){BPM:$(NO)}I-I") {
+#    field(DESC, "Beam Current calculation")
+#    field(CALC, "(A*B)-C")
+#   field(INPA, "$(P){BPM:$(NO)}Ampl:Sum-I.VAL  CP MS")
+##    field(INPA, "$(P){BPM:$(NO)}Ampl:SSA-Calc.VAL  NPP MS")
+#    field(INPB, "$(P){BPM:$(NO)}Beam:Gain-SP.VAL NPP MS")
+#    field(INPC, "$(P){BPM:$(NO)}Beam:Off-SP.VAL NPP MS")
+#    field(PREC,"6")
+#    field(EGU,  "nC")
+#}
 
 
 ##########################################################
