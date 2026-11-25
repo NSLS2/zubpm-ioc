@@ -137,6 +137,30 @@ record(ai, "$(P){BPM:$(NO)}Pos:Y-I") {
     field(MDEL , "-1")
 }
 
+
+record(calc, "$(P){BPM:$(NO)}Pos:X-Calc") {
+    field(DESC, "10 Hz X position calculation")
+    field(CALC, "A")
+    field(INPA, "$(P){BPM:$(NO)}Pos:X-I.VAL CP MS")
+    field(TSEL, "$(P){BPM:$(NO)}Pos:X-I.TIME")
+    field(PREC, "4")
+    field(EGU,  "mm")
+    field(ADEL, "-1")
+    field(MDEL, "-1")
+}
+
+record(calc, "$(P){BPM:$(NO)}Pos:Y-Calc") {
+    field(DESC, "10 Hz Y position calculation")
+    field(CALC, "A")
+    field(INPA, "$(P){BPM:$(NO)}Pos:Y-I.VAL CP MS")
+    field(TSEL, "$(P){BPM:$(NO)}Pos:Y-I.TIME")
+    field(PREC, "4")
+    field(EGU,  "mm")
+    field(ADEL, "-1")
+    field(MDEL, "-1")
+}
+
+
 record(longin, "$(P){BPM:$(NO)}Cnt:Trig-I") {
     field(DESC, "10 Hz Trigger count value")
     field(DTYP, "PSC Reg")
