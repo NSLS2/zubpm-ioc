@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2026-09-28 11:44:43 by mead-->
+<!--Saved on 2026-09-29 09:53:19 by mead-->
 <display version="2.0.0">
   <name>zuSystem</name>
   <width>1200</width>
@@ -5211,7 +5211,7 @@
       <color red="255" green="255" blue="255">
       </color>
     </background_color>
-    <precision>0</precision>
+    <precision>3</precision>
     <horizontal_alignment>1</horizontal_alignment>
     <actions>
     </actions>
@@ -5234,7 +5234,7 @@
       <color red="255" green="255" blue="255">
       </color>
     </background_color>
-    <precision>0</precision>
+    <precision>3</precision>
     <horizontal_alignment>1</horizontal_alignment>
     <actions>
     </actions>
